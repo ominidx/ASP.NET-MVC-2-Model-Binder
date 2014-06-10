@@ -28,3 +28,12 @@ public class JSONDataModelBinder<T> : IModelBinder
         return null;
     }
 }
+
+protected void Application_Start()
+{
+    AreaRegistration.RegisterAllAreas();
+    RegisterRoutes(RouteTable.Routes);
+
+    ModelBinders.Binders.Add(typeof(DailyLogSaveMobile), new JSONDataModelBinder<DailyLogSaveMobile>("dailyLogSaveMobile"));
+    ModelBinders.Binders.Add(typeof(FormValue), new JSONDataModelBinder<FormValue>("formValue"));
+}
