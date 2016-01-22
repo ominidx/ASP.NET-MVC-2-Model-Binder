@@ -28,7 +28,7 @@ public class JSONDataModelBinder<T> : IModelBinder
         return null;
     }
 }
-
+//Application init
 protected void Application_Start()
 {
     AreaRegistration.RegisterAllAreas();
